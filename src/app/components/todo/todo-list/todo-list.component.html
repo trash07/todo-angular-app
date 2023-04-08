@@ -1,0 +1,22 @@
+<table *ngIf="todos.length > 0" class="table">
+  <thead>
+      <tr>
+        <th>Libelle</th>
+        <th>Actions</th>
+      </tr>
+  </thead>
+  <tbody>
+<!--    <tr *ngFor="let todo of todos">-->
+<!--      <td>{{ todo.libelle }}</td>-->
+<!--      <td>-->
+<!--        <button class="btn btn-outline-success" (click)="editTodo(todo)" type="button" [title]="todo.libelle">-->
+<!--          <fa-icon [icon]="faEdit"></fa-icon>-->
+<!--        </button> &nbsp;-->
+<!--        <button (click)="deleteTodo(todo)" class="btn btn-outline-danger" type="button" [title]="todo.libelle">-->
+<!--          <fa-icon [icon]="faTrash"></fa-icon>-->
+<!--        </button>-->
+<!--      </td>-->
+<!--    </tr>-->
+    <tr *ngFor="let todo of todos" app-todo-line [todo]="todo" (todoEvent)="onTodoEvent($event)"></tr>
+  </tbody>
+</table>

@@ -1,0 +1,5 @@
+<div class="container">
+  <h1>Mes taches</h1>
+  <app-todo-form (todoEmitter)="saveTodo($event)"></app-todo-form>
+  <app-todo-list [todos]="todos" (todoAction)="handleAction($event)"></app-todo-list>
+</div>
